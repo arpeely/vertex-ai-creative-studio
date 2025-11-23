@@ -15,6 +15,10 @@
 */
 
 terraform {
+  backend "gcs" {
+    bucket = "rp-vertex-tf-state"
+    prefix = "vertex-creative-studio/"
+  }
   required_providers {
     google = {
       version = "~> 6.49"
