@@ -26,7 +26,7 @@ jobs:
   debugger:
     if: |-
      ${{ fromJSON(vars.DEBUG || vars.ACTIONS_STEP_DEBUG || false) }}
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
     permissions:
       contents: 'read'
     steps:
@@ -58,7 +58,7 @@ jobs:
         github.event_name == 'issues' &&
         contains(fromJSON('["opened", "reopened"]'), github.event.action)
       )
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
     permissions:
       contents: 'read'
       issues: 'write'
@@ -173,7 +173,7 @@ jobs:
       - 'invoke'
     if: |-
       ${{ always() && !cancelled() && (failure() || needs.dispatch.outputs.command == 'fallthrough') }}
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
     permissions:
       contents: 'read'
       issues: 'write'
