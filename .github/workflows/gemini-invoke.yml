@@ -18,7 +18,7 @@ defaults:
 
 jobs:
   invoke:
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'rp-self-hosted-dind'
     permissions:
       contents: 'read'
       id-token: 'write'
